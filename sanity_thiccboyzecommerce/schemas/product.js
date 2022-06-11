@@ -1,6 +1,6 @@
 export default {
 	name: "product", // REQUIRED: The field name. This will be the key in the data record.
-	title: "Title", // Human readable label for the field.
+	title: "Product", // Human readable label for the field. Title of data table.
 	type: "document", // REQUIRED: Name of any valid schema type. This will be the type of the value in the data record.
 
 	fields: [
