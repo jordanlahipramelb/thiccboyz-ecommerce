@@ -12,10 +12,14 @@ import {
 	AiOutlineStar,
 } from "react-icons/ai";
 import { Product } from "../../components";
+import { useStateContext } from "../../context/StateContext";
 
 const ProductDetails = ({ product, products }) => {
 	const { image, name, details, price } = product;
 	const [index, setIndex] = useState(0);
+
+	// state context imported from StateContext
+	const { qty, decreaseQty, increaseQty, onAddToCart } = useStateContext();
 
 	return (
 		<div>
@@ -42,36 +46,32 @@ const ProductDetails = ({ product, products }) => {
 
 				<div className="product-detail-description">
 					<h1>{name}</h1>
-					<div className="reviews">
-						<div>
-							<AiFillStar />
-							<AiFillStar />
-							<AiFillStar />
-							<AiFillStar />
-							<AiOutlineStar />
-						</div>
-						<p>(20)</p>
-					</div>
+
 					<h4>Details:</h4>
 					<p>{details}</p>
 					<p className="price">${price}</p>
 					<div className="quantity">
 						<h3>Quantity:</h3>
 						<p className="quantity-description">
-							<span className="minus" onClick="">
+							<span className="minus" onClick={decreaseQty}>
 								<AiOutlineMinus />
 							</span>
 							<span className="num" onClick="">
-								0
+								{qty}
 							</span>
-							<span className="plus" onClick="">
+							<span className="plus" onClick={increaseQty}>
 								<AiOutlinePlus />
 							</span>
 						</p>
 					</div>
 
 					<div className="buttons">
-						<button type="button" className="add-to-cart" onClick="">
+						<button
+							type="button"
+							className="add-to-cart"
+							// this product is passed in, along with the qty number
+							onClick={() => onAddToCart(product, qty)}
+						>
 							Add to Cart
 						</button>
 						<button type="button" className="buy-now" onClick="">
