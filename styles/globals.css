@@ -37,18 +37,21 @@ a {
 	margin: 60px 0px;
 	color: #f02d34;
 }
+
+/* container that will allow us to scroll within a div */
 .marquee {
 	position: relative;
-	height: 400px;
+	height: 350px;
 	width: 100%;
 	overflow-x: hidden;
 }
 
+/* allows marquee container to animate scroll horizontally */
 .track {
 	position: absolute;
 	white-space: nowrap;
 	will-change: transform;
-	animation: marquee 15s linear infinite;
+	animation: marquee 25s linear infinite;
 	width: 180%;
 }
 .track:hover {
@@ -133,9 +136,12 @@ span.text-red {
 	background-color: #dcdcdc;
 	border-radius: 15px;
 	position: relative;
-	height: 500px;
+	height: 450px;
 	line-height: 0.9;
 	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 .hero-banner-container .t-shirt {
 	font-size: 20px;
@@ -164,11 +170,10 @@ span.text-red {
 	text-transform: uppercase;
 }
 .hero-banner-image {
-	position: absolute;
-	top: 0%;
-	right: 20%;
-	width: 450px;
-	height: 450px;
+	/* position: absolute;
+	top: 20%;
+	right: 5%; */
+	width: 300px;
 }
 
 .description {
@@ -207,7 +212,8 @@ span.text-red {
 	font-weight: 200;
 }
 .footer-banner-container {
-	padding: 100px 40px;
+	padding: 50px 40px;
+
 	background-color: #f02d34;
 	border-radius: 15px;
 	position: relative;
@@ -241,11 +247,18 @@ span.text-red {
 	margin: 18px;
 }
 .footer-banner-image {
-	position: absolute;
+	/* position: absolute;
 	/* top: -35%;
-  left: 8%; */
+  left: 8%; 
+
 	top: -25%;
-	left: 25%;
+	left: 25%; */
+	position: relative;
+	width: 280px;
+}
+
+.banner-description .middle {
+	margin: 10px;
 }
 .banner-description .right {
 	line-height: 1.4;
@@ -406,11 +419,16 @@ span.text-red {
 }
 .product-detail-container {
 	display: flex;
+	justify-content: space-evenly;
 	gap: 40px;
 	margin: 40px;
 	margin-top: 60px;
 	color: #324d67;
 }
+
+/* .product-detail-container img {
+	width: 400px;
+} */
 
 .product-detail-image {
 	border-radius: 15px;
@@ -536,6 +554,9 @@ span.text-red {
 
 .maylike-products-wrapper {
 	margin-top: 120px;
+	padding-top: 2px;
+	background-color: #dcdcdc;
+	border-radius: 15px;
 }
 .maylike-products-wrapper h2 {
 	text-align: center;
@@ -548,7 +569,7 @@ span.text-red {
 	display: flex;
 	justify-content: center;
 	gap: 15px;
-	margin-top: 20px;
+	background-color: inherit;
 }
 .max-qty {
 	font-weight: 500;
@@ -610,23 +631,21 @@ span.text-red {
 
 @media screen and (max-width: 800px) {
 	.hero-banner-container {
-		height: 560px;
+		height: 600px;
 	}
 	.hero-banner-image {
-		width: 77%;
-		height: 62%;
-		top: -2%;
-		right: -6%;
+		margin-top: 10px;
+		width: 250px;
+		/* top: 15%;
+		right: 2%;
+		z-index: 0; */
 	}
 	.footer-banner-container {
-		height: 560px;
+		height: 800px;
 		margin-top: 80px;
 	}
 	.footer-banner-image {
-		width: 77%;
-		left: 30%;
-		top: 6%;
-		height: 56%;
+		width: 250px;
 	}
 	.banner-description .left h3 {
 		font-weight: 900;
@@ -647,7 +666,7 @@ span.text-red {
 	}
 	.banner-description {
 		flex-wrap: wrap;
-		gap: 20px;
+		gap: 10px;
 	}
 	.hero-banner-container {
 		line-height: 1.3;
@@ -659,7 +678,6 @@ span.text-red {
 		font-size: 40px;
 	}
 	.hero-banner-container button {
-		margin-top: 90px;
 		z-index: 10000;
 	}
 	.description {
@@ -725,7 +743,7 @@ span.text-red {
 		font-size: 20px;
 	}
 	.track {
-		animation: marquee 10s linear infinite;
+		animation: marquee 15s linear infinite;
 		width: 550%;
 	}
 	.success-wrapper,
