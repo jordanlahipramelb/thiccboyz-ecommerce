@@ -5,7 +5,17 @@ import { toast } from "react-hot-toast";
  *
  * imported into _app.js
  *
- * increment/decrement quantities in product details
+ * States:
+ * 	- increment/decrement quantities in product details
+ * 	- Display cart
+ * 	- total price of cart
+ * 	- total quantity of each item in cart
+ * 	- total quantity of items in cart
+ *
+ * Functions:
+ *  - onAddToCart
+ *  - increaseQty
+ * 	- decreaseQty
  */
 
 const Context = createContext();
@@ -13,9 +23,14 @@ const Context = createContext();
 export const StateContext = ({ children }) => {
 	const [showCart, setShowCart] = useState(false);
 	const [cartItems, setCartItems] = useState([]);
-	const [totalPrice, setTotalPrice] = useState();
+	const [totalPrice, setTotalPrice] = useState(0);
 	const [totalQuantities, setTotalQuantities] = useState(0); // number of ALL items in cart
 	const [qty, setQty] = useState(1);
+
+	// product we want to update
+	let foundProduct;
+	// index of the property we want to update
+	let index;
 
 	const onAddToCart = (product, quantity) => {
 		// check to see if item is already in cart
@@ -46,11 +61,71 @@ export const StateContext = ({ children }) => {
 			// product object set with quantity
 			product.quantity = quantity;
 
-			// update cart items with the existing cart items plus as obj of the product with the updated quantity
-			setCartItems([...cartItems], { ...product });
+			// update cart items with an array of the existing cart items plus an obj of the product with the  quantity selected
+			setCartItems([...cartItems, { ...product }]);
 		}
 
 		toast.success(`${qty} ${product.name} added to the cart.`);
+	};
+
+	const onRemoveFromCart = (id) => {
+		foundProduct = cartItems.find((item) => item._id === id);
+
+		const newCartItems = cartItems.filter((item) => item._id !== id);
+
+		// minus the price of the foundProduct from the previous price/quantity
+		setTotalPrice(
+			(prevTotalPrice) =>
+				prevTotalPrice - foundProduct.price * foundProduct.quantity
+		);
+		// minus the total quantity of the cart by the quantity of the foundProduct
+		setTotalQuantities(
+			(prevTotalQuantity) => prevTotalQuantity - foundProduct.quantity
+		);
+
+		setCartItems(newCartItems);
+	};
+
+	/** Increment/decrement quantity of products in cart */
+	const toggleCartItemQty = (id, value) => {
+		// find product in cart where id equals item _id
+		foundProduct = cartItems.find((item) => item._id === id);
+		// find the index of that same item
+		index = cartItems.findIndex((item) => item._id === id);
+		// filter out the items that we're not updating sso we don't mutate state
+		const newCartItems = cartItems.filter((item) => item._id !== id);
+
+		if (value === "increment") {
+			/** never mutate the state in React! //
+			
+			foundProduct.quantity += 1;
+			cartItems[index] = foundProduct; */
+			/** do this instead; create new cart variable
+			let newCartItems = [
+				...cartItems, //spread previous cart items
+				{ ...product, quantity: (product.quantity + 1) }, // spread found product and increase quantity
+			];
+			setCartItems(newCartItems); */
+
+			/** Refactored */
+			setCartItems([
+				...newCartItems, //spread previous cart items
+				{ ...foundProduct, quantity: foundProduct.quantity + 1 }, // spread found product and increase quantity
+			]);
+			setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price);
+			setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + 1);
+		}
+
+		if (value === "decrement") {
+			if (foundProduct.quantity > 1) {
+				setCartItems([
+					...newCartItems, //spread previous cart items
+					{ ...foundProduct, quantity: foundProduct.quantity - 1 }, // spread found product and decrease quantity
+				]);
+				setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
+				setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - 1);
+			}
+		}
 	};
 
 	/** increase quantity by 1 */
@@ -82,6 +157,8 @@ export const StateContext = ({ children }) => {
 				increaseQty,
 				decreaseQty,
 				onAddToCart,
+				onRemoveFromCart,
+				toggleCartItemQty,
 			}}
 		>
 			{children}
@@ -89,5 +166,5 @@ export const StateContext = ({ children }) => {
 	);
 };
 
-// exports our context/functions and allows us to use our state like a hook (used in [_id].js)
+// exports our context/functions and allows us to use our state like a hook (used in [_id].js, Cart.jsx)
 export const useStateContext = () => useContext(Context);
