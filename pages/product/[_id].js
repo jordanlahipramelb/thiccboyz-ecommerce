@@ -19,7 +19,14 @@ const ProductDetails = ({ product, products }) => {
 	const [index, setIndex] = useState(0);
 
 	// state context imported from StateContext
-	const { qty, decreaseQty, increaseQty, onAddToCart } = useStateContext();
+	const { qty, decreaseQty, increaseQty, onAddToCart, setShowCart } =
+		useStateContext();
+
+	const handleBuyNow = () => {
+		onAddToCart(product, qty);
+
+		setShowCart(true);
+	};
 
 	return (
 		<div>
@@ -34,6 +41,7 @@ const ProductDetails = ({ product, products }) => {
 					<div className="small-images-container">
 						{image?.map((item, i) => (
 							<img
+								key={i}
 								src={urlFor(item)}
 								className={
 									i == index ? "small-image selected-image" : "small-image"
@@ -74,7 +82,7 @@ const ProductDetails = ({ product, products }) => {
 						>
 							Add to Cart
 						</button>
-						<button type="button" className="buy-now" onClick="">
+						<button type="button" className="buy-now" onClick={handleBuyNow}>
 							Buy Now
 						</button>
 					</div>
@@ -113,7 +121,7 @@ export const getStaticProps = async ({ params: { _id } }) => {
 	const product = await client.fetch(query);
 	const products = await client.fetch(productsQuery);
 
-	console.log(product);
+	// console.log(product);
 
 	return {
 		props: { products, product },

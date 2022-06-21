@@ -100,6 +100,7 @@ export const StateContext = ({ children }) => {
 			
 			foundProduct.quantity += 1;
 			cartItems[index] = foundProduct; */
+
 			/** do this instead; create new cart variable
 			let newCartItems = [
 				...cartItems, //spread previous cart items
@@ -137,7 +138,7 @@ export const StateContext = ({ children }) => {
 	/** decrease quantity by 1*/
 	const decreaseQty = () => {
 		setQty((prevQty) => {
-			// can't decrease quantity lower than 1
+			// can't decrease quantity if lower than 1
 			if (prevQty < 1) return 1;
 
 			return prevQty - 1;
@@ -151,8 +152,11 @@ export const StateContext = ({ children }) => {
 				showCart,
 				setShowCart,
 				cartItems,
+				setCartItems,
 				totalPrice,
+				setTotalPrice,
 				totalQuantities,
+				setTotalQuantities,
 				qty,
 				increaseQty,
 				decreaseQty,

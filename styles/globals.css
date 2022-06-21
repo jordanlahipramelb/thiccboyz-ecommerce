@@ -80,7 +80,7 @@ span.text-red {
 	color: gray;
 	cursor: pointer;
 	position: relative;
-	transition: transform 0.4s ease;
+	transition: transform 0.2s ease;
 	border: none;
 	background-color: transparent;
 }
@@ -110,7 +110,7 @@ span.text-red {
 .product-card {
 	cursor: pointer;
 	transform: scale(1, 1);
-	transition: transform 0.5s ease;
+	transition: transform 0.2s ease;
 	color: #324d67;
 }
 .product-card:hover {
@@ -414,7 +414,7 @@ span.text-red {
 	color: #fff;
 	cursor: pointer;
 	transform: scale(1, 1);
-	transition: transform 0.5s ease;
+	transition: transform 0.2s ease;
 }
 .btn:hover {
 	transform: scale(1.1, 1.1);
@@ -439,7 +439,7 @@ span.text-red {
 	width: 400px;
 	height: 400px;
 	cursor: pointer;
-	transition: 0.3s ease-in-out;
+	transition: 0.2s ease-in-out;
 }
 .product-detail-image:hover {
 	background-color: #f02d34;
@@ -504,7 +504,7 @@ span.text-red {
 	cursor: pointer;
 	width: 200px;
 	transform: scale(1, 1);
-	transition: transform 0.5s ease;
+	transition: transform 0.2s ease;
 }
 .buttons .add-to-cart:hover {
 	transform: scale(1.1, 1.1);
@@ -521,7 +521,7 @@ span.text-red {
 	font-weight: 500;
 	cursor: pointer;
 	transform: scale(1, 1);
-	transition: transform 0.5s ease;
+	transition: transform 0.2s ease;
 }
 .buttons .buy-now:hover {
 	transform: scale(1.1, 1.1);
@@ -602,21 +602,21 @@ span.text-red {
 }
 .success .email-msg {
 	font-size: 16px;
-	font-weight: 600;
+	/* font-weight: 600; */
 	text-align: center;
 }
 .cancel p {
 	font-size: 20px;
 	font-weight: 600;
 }
-.success .description {
+.success .desc {
 	font-size: 16px;
 	font-weight: 600;
 	text-align: center;
 	margin: 10px;
 	margin-top: 30px;
 }
-.success .description .email {
+.success .desc .email {
 	margin-left: 5px;
 	color: #f02d34;
 }
