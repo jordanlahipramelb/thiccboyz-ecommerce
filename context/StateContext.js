@@ -27,6 +27,8 @@ export const StateContext = ({ children }) => {
 	const [totalQuantities, setTotalQuantities] = useState(0); // number of ALL items in cart
 	const [qty, setQty] = useState(1);
 
+	console.log(cartItems);
+
 	// product we want to update
 	let foundProduct;
 	// index of the property we want to update
@@ -55,6 +57,12 @@ export const StateContext = ({ children }) => {
 			});
 
 			setCartItems(updatedCartItems);
+
+			// if (typeof window !== "undefined") {
+			// 	//make cart a string and store in local space
+			// 	let stringCart = JSON.stringify(updatedCartItems);
+			// 	localStorage.setItem("cart", stringCart);
+			// }
 		}
 		// if we don't have the item in the cart
 		else {
@@ -63,6 +71,12 @@ export const StateContext = ({ children }) => {
 
 			// update cart items with an array of the existing cart items plus an obj of the product with the  quantity selected
 			setCartItems([...cartItems, { ...product }]);
+
+			// if (typeof window !== "undefined") {
+			// 	//make cart a string and store in local space
+			// 	let stringCart = JSON.stringify(cartItems);
+			// 	localStorage.setItem("cart", stringCart);
+			// }
 		}
 
 		toast.success(`${qty} ${product.name} added to the cart.`);
@@ -84,6 +98,11 @@ export const StateContext = ({ children }) => {
 		);
 
 		setCartItems(newCartItems);
+
+		// if (typeof window !== "undefined") {
+		// 	let cartString = JSON.stringify(newCartItems);
+		// 	localStorage.setItem("cart", cartString);
+		// }
 	};
 
 	/** Increment/decrement quantity of products in cart */
@@ -101,14 +120,7 @@ export const StateContext = ({ children }) => {
 			foundProduct.quantity += 1;
 			cartItems[index] = foundProduct; */
 
-			/** do this instead; create new cart variable
-			let newCartItems = [
-				...cartItems, //spread previous cart items
-				{ ...product, quantity: (product.quantity + 1) }, // spread found product and increase quantity
-			];
-			setCartItems(newCartItems); */
-
-			/** Refactored */
+			/** do this instead; create new cart variable */
 			setCartItems([
 				...newCartItems, //spread previous cart items
 				{ ...foundProduct, quantity: foundProduct.quantity + 1 }, // spread found product and increase quantity
@@ -144,6 +156,15 @@ export const StateContext = ({ children }) => {
 			return prevQty - 1;
 		});
 	};
+
+	// useEffect(() => {
+	// 	let localCart = localStorage.getItem("cart");
+
+	// 	//turn it into js
+	// 	localCart = JSON.parse(localCart);
+	// 	//load persisted cart into state if it exists
+	// 	if (localCart) setCartItems(localCart);
+	// }, []); //the empty array ensures useEffect only runs once
 
 	return (
 		// object of values passed along entire app
