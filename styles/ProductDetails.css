@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: space-evenly;
 	gap: 40px;
-	margin: 40px;
+	margin: 5px 150px;
 	margin-top: 60px;
 	color: #324d67;
 }
@@ -11,9 +11,13 @@
 	width: 400px;
 } */
 
+/* .image-container {
+	width: 20rem;
+} */
+
 .small-images-container {
 	display: flex;
-	gap: 10px;
+	gap: 15px;
 	margin-top: 20px;
 }
 .small-image {
@@ -26,6 +30,10 @@
 
 .selected-image {
 	background-color: #f02d34;
+}
+
+.product-detail-description {
+	max-width: 30rem;
 }
 
 .product-detail-description h4 {
@@ -169,7 +177,7 @@
 	background-color: #f02d34;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
 	.product-detail-container {
 		flex-wrap: wrap;
 		margin: 20px;
