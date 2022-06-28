@@ -5,7 +5,7 @@
 	right: 0;
 	top: 0;
 	z-index: 100;
-	/* will-change: transform; */
+	will-change: transform;
 	transition: all 1s ease-in-out;
 }
 .cart-container {
@@ -58,7 +58,6 @@
 }
 .product .cart-product-image {
 	width: 180px;
-	height: 150px;
 	border-radius: 15px;
 	background-color: #ebebeb;
 }
@@ -153,6 +152,6 @@
 
 	.btn-container {
 		width: 300px;
-		margin: auto;
+		margin-bottom: 20px;
 	}
 }

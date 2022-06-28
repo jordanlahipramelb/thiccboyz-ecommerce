@@ -10,8 +10,8 @@ function Home({ products, bannerData }) {
 			{/* {console.log("bannerData:", bannerData)} */}
 
 			<div className="products-heading">
-				<h2>Best Selling Products</h2>
-				<p>Shirts of many color variations</p>
+				<h2>Our Products</h2>
+				{/* <p>Shirts of many color variations</p> */}
 			</div>
 			<div className="products-container">
 				{/* test data */
