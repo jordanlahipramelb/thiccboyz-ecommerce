@@ -1,0 +1,99 @@
+.hero-banner-container {
+	padding: 100px 40px;
+	background-color: #dcdcdc;
+	border-radius: 15px;
+	position: relative;
+	height: 450px;
+	line-height: 0.9;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.hero-banner-container p {
+	font-size: 20px;
+}
+.hero-banner-container button {
+	border-radius: 15px;
+	padding: 10px 16px;
+	background-color: #f02d34;
+	color: white;
+	border: none;
+	margin-top: 40px;
+	font-size: 18px;
+	font-weight: 500;
+	cursor: pointer;
+	z-index: 10000 !important;
+}
+
+.hero-banner-container h3 {
+	font-size: 4rem;
+	margin-top: 4px;
+}
+.hero-banner-container h1 {
+	color: white;
+	font-size: 10em;
+	margin-left: -20px;
+	text-transform: uppercase;
+}
+.hero-banner-image {
+	/* position: absolute;
+	top: 20%;
+	right: 5%; */
+	width: 300px;
+}
+
+.description {
+	position: absolute;
+	right: 10%;
+	bottom: 5%;
+	width: 300px;
+	line-height: 1.3;
+	display: flex;
+	flex-direction: column;
+	color: #324d67;
+}
+.description p {
+	color: #5f5f5f;
+	font-weight: 100;
+	text-align: end;
+}
+.description h5 {
+	margin-bottom: 12px;
+	font-weight: 700;
+	font-size: 16px;
+	/* color: black; */
+	align-self: flex-end;
+}
+
+@media screen and (max-width: 800px) {
+	.hero-banner-container {
+		height: 600px;
+	}
+
+	.hero-banner-image {
+		margin-top: 10px;
+		width: 250px;
+		/* top: 15%;
+		right: 2%;
+		z-index: 0; */
+	}
+
+	.hero-banner-container {
+		line-height: 1.3;
+	}
+
+	.hero-banner-container h1 {
+		font-size: 50px;
+	}
+	.hero-banner-container h3 {
+		font-size: 40px;
+	}
+	.hero-banner-container button {
+		z-index: 10000;
+	}
+	.description {
+		bottom: 60px;
+	}
+}

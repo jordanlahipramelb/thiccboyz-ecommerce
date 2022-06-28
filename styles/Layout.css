@@ -1,0 +1,9 @@
+.container {
+	padding: 1rem;
+}
+
+.main-container {
+	max-width: 100rem;
+	margin: auto;
+	width: 100%;
+}

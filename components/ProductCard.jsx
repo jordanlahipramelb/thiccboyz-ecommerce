@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { urlFor } from "../lib/client";
 
-const Product = ({ product: { _id, image, name, slug, price } }) => {
+const ProductCard = ({ product: { _id, image, name, slug, price } }) => {
 	return (
 		<div>
 			<Link href={`/product/${_id}`}>
@@ -22,4 +22,4 @@ const Product = ({ product: { _id, image, name, slug, price } }) => {
 	);
 };
 
-export default Product;
+export default ProductCard;

@@ -23,6 +23,7 @@ const Navbar = () => {
 				<span className="cart-item-qty">{totalQuantities}</span>
 			</button>
 
+			{/* Displays Cart component if showCart is true */}
 			{showCart && <Cart />}
 		</div>
 	);

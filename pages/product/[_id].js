@@ -5,13 +5,8 @@
 
 import React, { useState } from "react";
 import { urlFor, client } from "../../lib/client";
-import {
-	AiOutlineMinus,
-	AiOutlinePlus,
-	AiFillStar,
-	AiOutlineStar,
-} from "react-icons/ai";
-import { Product } from "../../components";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import { ProductCard } from "../../components";
 import { useStateContext } from "../../context/StateContext";
 
 const ProductDetails = ({ product, products }) => {
@@ -93,7 +88,7 @@ const ProductDetails = ({ product, products }) => {
 					<div className="maylike-products-container track">
 						{/* map through products and return <Product/> cards */}
 						{products.map((item) => (
-							<Product key={item._id} product={item} />
+							<ProductCard key={item._id} product={item} />
 						))}
 					</div>
 				</div>

@@ -5,7 +5,7 @@ import Footer from "./Footer";
 
 const Layout = ({ children }) => {
 	return (
-		<div className="layout">
+		<div className="container">
 			<Head>
 				<title>Thicc Boyz Bowling Club</title>
 			</Head>

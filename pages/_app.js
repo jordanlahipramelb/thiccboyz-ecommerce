@@ -1,5 +1,15 @@
 import React from "react";
 import "../styles/globals.css";
+import "../styles/Layout.css";
+import "../styles/Navbar.css";
+import "../styles/Cart.css";
+import "../styles/Home.css";
+import "../styles/HeroBanner.css";
+import "../styles/ProductCard.css";
+import "../styles/ProductDetails.css";
+import "../styles/Footer.css";
+import "../styles/FooterBanner.css";
+
 import { Layout } from "../components";
 // pass state/context to components inside of it
 import { StateContext } from "../context/StateContext";

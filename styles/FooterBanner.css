@@ -1,0 +1,94 @@
+.footer-banner-container {
+	padding: 50px 40px;
+
+	background-color: #f02d34;
+	border-radius: 15px;
+	position: relative;
+	height: 400px;
+	line-height: 1;
+	color: white;
+	width: 100%;
+	margin-top: 120px;
+}
+.banner-description {
+	display: flex;
+	justify-content: space-between;
+}
+.banner-description button {
+	border-radius: 15px;
+	padding: 10px 16px;
+	background-color: white;
+	color: red;
+	border: none;
+	margin-top: 40px;
+	font-size: 18px;
+	font-weight: 500;
+	cursor: pointer;
+}
+.banner-description .left h3 {
+	font-weight: 900;
+	font-size: 80px;
+	margin-left: 25px;
+}
+.banner-description .left p {
+	margin: 18px;
+}
+.footer-banner-image {
+	/* position: absolute;
+	/* top: -35%;
+  left: 8%; 
+
+	top: -25%;
+	left: 25%; */
+	position: relative;
+	width: 280px;
+}
+
+.banner-description .middle {
+	margin: 10px;
+}
+.banner-description .right {
+	line-height: 1.4;
+}
+.banner-description .right h3 {
+	font-weight: 800;
+	font-size: 60px;
+}
+.banner-description .right p {
+	font-size: 18px;
+}
+.banner-description .right .company-description {
+	font-size: 14px;
+	font-weight: 300;
+}
+
+@media screen and (max-width: 800px) {
+	.footer-banner-container {
+		height: 800px;
+		margin-top: 80px;
+	}
+	.footer-banner-image {
+		width: 250px;
+	}
+	.banner-description .left h3 {
+		font-weight: 900;
+		font-size: 50px;
+		margin-left: 5px;
+	}
+	.banner-description .left p {
+		margin: 18px;
+	}
+	.banner-description .right h3 {
+		font-size: 45px;
+	}
+	.banner-description .right p {
+		font-size: 18px;
+	}
+	.banner-description .right .company-description {
+		font-size: 14px;
+	}
+	.banner-description {
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+}

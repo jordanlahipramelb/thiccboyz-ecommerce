@@ -1,6 +1,6 @@
 import React from "react";
 import { client } from "../lib/client";
-import { Product, FooterBanner, HeroBanner } from "../components";
+import { ProductCard, FooterBanner, HeroBanner } from "../components";
 
 function Home({ products, bannerData }) {
 	return (
@@ -17,7 +17,7 @@ function Home({ products, bannerData }) {
 				{/* test data */
 				/* {["Product 1", "Product 2", "Product 3"].map((product) => product)} */}
 				{products?.map((product) => (
-					<Product key={product._id} product={product} />
+					<ProductCard key={product._id} product={product} />
 				))}
 			</div>
 
