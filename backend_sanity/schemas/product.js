@@ -28,6 +28,11 @@ export default {
 			},
 		},
 		{
+			name: "type",
+			title: "Type",
+			type: "string",
+		},
+		{
 			name: "price",
 			title: "Price",
 			type: "number",

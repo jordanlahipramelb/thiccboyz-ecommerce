@@ -7,7 +7,7 @@ function Home({ products, bannerData }) {
 		<>
 			{/* if bannerData exists, pass in the data */}
 			<HeroBanner heroBanner={bannerData.length && bannerData[0]} />
-			{/* {console.log("bannerData:", bannerData)} */}
+			{console.log("products:", products)}
 
 			<div className="products-heading">
 				<h2>Our Products</h2>

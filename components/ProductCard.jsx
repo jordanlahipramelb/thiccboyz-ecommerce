@@ -10,7 +10,6 @@ const ProductCard = ({ product: { _id, image, name, slug, price } }) => {
 					<img
 						src={urlFor(image && image[0])}
 						width={250}
-						height={250}
 						alt={name}
 						className="product-image"
 					/>

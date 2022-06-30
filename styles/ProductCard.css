@@ -1,15 +1,15 @@
 .product-card {
 	cursor: pointer;
 	transform: scale(1, 1);
-	transition: transform 0.2s ease;
-	color: #324d67;
+	transition: transform 0.1s ease;
+	color: #1a2d3f;
 }
 .product-card:hover {
 	transform: scale(1.1, 1.1);
 }
 
 .product-image {
-	border-radius: 15px;
+	border-radius: 7px;
 	background-color: #ebebeb;
 	transform: scale(1, 1);
 	transition: transform 0.5s ease;
@@ -21,6 +21,6 @@
 
 .product-price {
 	font-weight: 800;
-	margin-top: 6px;
+	margin-top: 3px;
 	color: black;
 }
