@@ -6,13 +6,10 @@ import { urlFor } from "../lib/client";
 const HeroBanner = ({ heroBanner }) => {
 	return (
 		<div className="hero-banner-container">
-			<div>
-				<h3>Thicc Boyz Bowling Club</h3>
-
-				<Link href={`/product/${heroBanner.product}`}>
-					<button type="button">{heroBanner.buttonText}</button>
-				</Link>
-			</div>
+			<p>Welcome to</p>
+			<h1>THICC BOYZ</h1>
+			<h1>BOWLING CLUB</h1>
+			<p>est. 2021</p>
 		</div>
 	);
 };

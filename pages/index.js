@@ -11,7 +11,6 @@ function Home({ products, bannerData }) {
 
 			<div className="products-heading">
 				<h2>Our Products</h2>
-				{/* <p>Shirts of many color variations</p> */}
 			</div>
 			<div className="products-container">
 				{/* test data */
@@ -21,7 +20,7 @@ function Home({ products, bannerData }) {
 				))}
 			</div>
 
-			<FooterBanner footerBanner={bannerData && bannerData[0]} />
+			{/* <FooterBanner footerBanner={bannerData && bannerData[0]} /> */}
 		</>
 	);
 }
