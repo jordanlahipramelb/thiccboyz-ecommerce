@@ -11,6 +11,7 @@ import "../styles/Footer.css";
 import "../styles/FooterBanner.css";
 import "../styles/SuccessCancel.css";
 import "../styles/ProductType.css";
+import "../styles/CategoryItem.css";
 
 import { Layout } from "../components";
 // pass state/context to components inside of it

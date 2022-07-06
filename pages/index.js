@@ -1,6 +1,15 @@
 import React from "react";
 import { client } from "../lib/client";
-import { ProductCard, FooterBanner, HeroBanner } from "../components";
+import {
+	ProductCard,
+	FooterBanner,
+	HeroBanner,
+	CategoryItem,
+} from "../components";
+import TshirtImage from "../assets/images/tshirt.jpg";
+import HoodiesImage from "../assets/images/hoodies.jpg";
+import TankTopsImage from "../assets/images/tanktop.jpg";
+import CrewImage from "../assets/images/crew.jpg";
 
 function Home({ products, bannerData }) {
 	return (
@@ -9,15 +18,19 @@ function Home({ products, bannerData }) {
 			<HeroBanner heroBanner={bannerData.length && bannerData[0]} />
 			{console.log("products:", products)}
 
-			<div className="products-heading">
-				<h2>Our Products</h2>
-			</div>
-			<div className="products-container">
-				{/* test data */
-				/* {["Product 1", "Product 2", "Product 3"].map((product) => product)} */}
-				{products?.map((product) => (
-					<ProductCard key={product._id} product={product} />
-				))}
+			<div className="categories-container">
+				<CategoryItem src={TshirtImage} title={"T-Shirts"} link={"/tshirts"} />
+				<CategoryItem
+					src={TankTopsImage}
+					title={"Tank Tops"}
+					link={"/tanktops"}
+				/>
+				<CategoryItem src={HoodiesImage} title={"Hoodies"} link={"/hoodies"} />
+				<CategoryItem
+					src={CrewImage}
+					title={"Crew Necks"}
+					link={"/crewnecks"}
+				/>
 			</div>
 
 			{/* <FooterBanner footerBanner={bannerData && bannerData[0]} /> */}

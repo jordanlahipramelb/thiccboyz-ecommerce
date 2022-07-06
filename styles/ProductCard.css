@@ -3,6 +3,7 @@
 	transform: scale(1, 1);
 	transition: transform 0.1s ease;
 	color: #1a2d3f;
+	width: 18rem;
 }
 .product-card:hover {
 	transform: scale(1.1, 1.1);
