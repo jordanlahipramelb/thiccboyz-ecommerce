@@ -7,6 +7,9 @@ const CategoryItem = ({ src, title, link }) => {
 		<Link href={link}>
 			<div className="category-container">
 				<Image src={src} />
+				<div className="overlay">
+					<div className="text">{title}</div>
+				</div>
 				<div className="info">
 					<h1>{title}</h1>
 				</div>

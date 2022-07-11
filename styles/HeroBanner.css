@@ -4,15 +4,13 @@
 	position: relative;
 	height: 400px;
 	width: 100%;
-	/* display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between; */
 	align-items: center;
 	text-align: center;
 }
 
-.hero-banner-container p {
-	font-size: 20px;
+.hero-banner-container .small {
+	font-size: 1rem;
+	font-family: "Raleway";
 }
 .hero-banner-container button {
 	border-radius: 15px;
