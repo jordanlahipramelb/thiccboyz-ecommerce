@@ -2,6 +2,8 @@
 
 Link: https://thiccboyzbowlingclub-shop.vercel.app/
 
+![Image of homepage](assets/images/Homepage.png)
+
 ## Description
 
 **Thicc Boyz Bowling Club Ecommerce** is an eCommerce website that allows users to navigate through its products and allows them to add/remove these products from their cart. Furthermore, the user is able to complete checkout with the integration of Stripe.
@@ -19,3 +21,11 @@ Bowling is one of my favorite hobbies. I participate in a league at one of the c
 - Sanity.io
   - Backend for managing products
 - Stripe payments
+
+## Screeshots
+
+![Image of products](assets/images/Products.png)
+![Image of product](assets/images/Product.png)
+![Image of cart](assets/images/Cart.png)
+![Image of payment](assets/images/Payment.png)
+![Image of confirmed](assets/images/Confirmed.png)
