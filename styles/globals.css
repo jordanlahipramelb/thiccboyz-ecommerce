@@ -10,9 +10,9 @@ body,
 	font-family: "Roboto", sans-serif;
 	box-sizing: border-box;
 }
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
 	width: 0px;
-}
+} */
 
 a {
 	color: inherit;
