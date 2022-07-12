@@ -10,7 +10,7 @@ Link: https://thiccboyzbowlingclub-shop.vercel.app/
 
 ## What is Thicc Boyz Bowling Club?
 
-Bowling is one of my favorite hobbies. I participate in a league at one of the casinos here in town in Las Vegas along with 3 other members. Our team name is **Thicc Boyz Bowling Club**. We designed shirts for our team which resembles the products seen on this website. These shirts have been asked about numerous times so I decided to create a mock website in order to advance my development skills as well as possibly creating a website we could sell our brand.
+Bowling is one of my favorite hobbies. I participate in a league at one of the casinos here in town in Las Vegas along with 3 other members. Our team name is **Thicc Boyz Bowling Club**. We designed shirts for our team which resembles the products seen on this website. These shirts have been asked about numerous times so I decided to create a mock website in order to advance my development skills as well as possibly creating a website where we could sell our brand.
 
 ## Technologies Utilized
 
