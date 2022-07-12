@@ -22,7 +22,7 @@ Bowling is one of my favorite hobbies. I participate in a league at one of the c
   - Backend for managing products
 - Stripe payments
 
-## Screeshots
+## Screenshots
 
 ![Image of products](assets/images/Products.png)
 ![Image of product](assets/images/Product.png)
