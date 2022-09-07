@@ -28,7 +28,7 @@ const Navbar = () => {
 			<ul className="menu d-md-none">
 				<Link href="/tshirts">T-SHIRTS</Link>
 				<Link href="/tanktops">TANK TOPS</Link>
-				<Link href="crewnecks">CREW NECKS</Link>
+				<Link href="/crewnecks">CREW NECKS</Link>
 				<Link href="/hoodies">HOODIES</Link>
 			</ul>
 
@@ -36,7 +36,7 @@ const Navbar = () => {
 			<ul className={!nav ? "d-none" : "mobile-menu"} onClick={handleNav}>
 				<Link href="/tshirts">T-SHIRTS</Link>
 				<Link href="/tanktops">TANK TOPS</Link>
-				<Link href="crewnecks">CREW NECKS</Link>
+				<Link href="/crewnecks">CREW NECKS</Link>
 				<Link href="/hoodies">HOODIES</Link>
 			</ul>
 
